@@ -78,13 +78,31 @@ st.html(
         line-height: 1.18;
         font-weight: 600;
         color: #1A1A1A;
-        margin-bottom: 25px;
+        margin-bottom: 16px;
     }
 
     .hero-heading em {
         font-style: italic;
         color: #B58A7E;
         font-weight: 400;
+    }
+
+    /* Pre-CTA Guarantee Text Banner */
+    .pre-cta-banner {
+        text-align: center;
+        font-size: 13.5px;
+        line-height: 1.55;
+        color: #4A423E;
+        background: rgba(255, 255, 255, 0.65);
+        border: 1px solid rgba(181, 138, 126, 0.2);
+        border-radius: 16px;
+        padding: 16px 18px;
+        margin-bottom: 22px;
+    }
+
+    .pre-cta-banner strong {
+        color: #1A1A1A;
+        font-weight: 600;
     }
 
     /* Dark Call To Action Box */
@@ -216,7 +234,7 @@ st.html(
 
     .hero-card img {
         width: 100%;
-        height: 340px;
+        height: 380px;
         display: block;
         object-fit: cover;
     }
@@ -253,24 +271,10 @@ st.html(
         text-align: center;
     }
 
-    .main-description {
-        font-size: 14px;
-        line-height: 1.55;
-        color: #4A423E;
-        margin-bottom: 20px;
-    }
-
-    .main-description strong {
-        color: #1A1A1A;
-        font-weight: 600;
-    }
-
     .stats-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 16px;
-        padding-top: 16px;
-        border-top: 1px solid rgba(0,0,0,0.08);
     }
 
     .stat-num {
@@ -378,7 +382,7 @@ st.html(
     """
 )
 
-# Render Header & Interactive CTA Buttons
+# Render Header, Text Highlight, & Interactive CTA Buttons
 st.html(
     """
     <div class="top-header">CHAYA <span>JEWELLERY</span></div>
@@ -388,6 +392,11 @@ st.html(
         <div class="sub-tag">— ZURICH · CERTIFIED DIAMONDS —</div>
         <div class="hero-heading">
             Design the <em>Perfect</em><br>Engagement Ring
+        </div>
+
+        <!-- Statement Before CTAs -->
+        <div class="pre-cta-banner">
+            Get the <strong>best-price certified</strong> diamond engagement ring in Switzerland and a <strong>lifetime warranty</strong> in 40 days or less — or you get your <strong>money back.</strong>
         </div>
 
         <!-- Interactive Working Buttons Container -->
@@ -432,11 +441,11 @@ st.html(
     """
 )
 
-# Render Showcase Ring Image from Unsplash
+# Render Showcase Ring Image (Clean Solitaire Engagement Ring)
 st.markdown(
     """
     <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1000&auto=format&fit=crop" alt="Diamond Engagement Ring" />
+        <img src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=1000&auto=format&fit=crop" alt="Simple Solitaire Diamond Engagement Ring" />
         <div class="badge">
             <span class="badge-dot"></span> Ethically sourced, since 1976
         </div>
@@ -445,14 +454,11 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Guarantee Section with bold text
+# Stats Counter Section
 st.html(
     """
-        <!-- Guarantee Section -->
+        <!-- Stats Section -->
         <div class="text-block-card">
-            <div class="main-description">
-                Get the <strong>best-price certified</strong> diamond engagement ring in Switzerland and a <strong>lifetime warranty</strong> in 40 days or less — or you get your <strong>money back.</strong>
-            </div>
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-num">40</div>
