@@ -409,7 +409,7 @@ st.html(
             <div class="cta-main-heading">Three ways to reach us</div>
             <div class="cta-subtext">Pick whichever feels right — a quick chat, a browse, or a booked call.</div>
             
-            <a href="https://wa.me/41790000000" target="_blank" class="custom-btn btn-whatsapp">
+            <a href="https://wa.me/41782313186" target="_blank" class="custom-btn btn-whatsapp">
                 <div class="btn-inner">
                     <div class="btn-circle-icon btn-circle-dark">💬</div>
                     <div>
