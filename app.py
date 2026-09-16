@@ -441,11 +441,11 @@ st.html(
     """
 )
 
-# Render Showcase Engagement Ring Image
+# Render Showcase Ring Image
 st.markdown(
     """
     <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-FOwYSRlL-Bk?q=80&w=1000&auto=format&fit=crop" alt="Diamond Engagement Ring" />
+        <img src="https://images.unsplash.com/photo-9_35SjwzpnU?q=80&w=1000&auto=format&fit=crop" alt="Silver Diamond Studded Heart Pendant" />
         <div class="badge">
             <span class="badge-dot"></span> Ethically sourced, since 1976
         </div>
@@ -453,6 +453,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
