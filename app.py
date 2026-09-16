@@ -8,7 +8,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# Custom Styling to match the exact design perfectly
+# Custom Styling to match the exact mobile design perfectly
 st.markdown(
     """
     <style>
@@ -17,7 +17,7 @@ st.markdown(
     footer {visibility: hidden;}
     header {visibility: hidden;}
     
-    /* Import Serif Font */
+    /* Import Serif & Sans-Serif Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
     html, body, [class*="css"] {
@@ -63,47 +63,6 @@ st.markdown(
         padding: 20px 20px 40px 20px;
     }
 
-    /* Hero Card & Image Overlay */
-    .hero-card {
-        position: relative;
-        border-radius: 24px;
-        overflow: hidden;
-        background-color: #E2CDC4;
-        margin-bottom: 30px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    .hero-card img {
-        width: 100%;
-        display: block;
-        object-fit: cover;
-    }
-
-    .badge {
-        position: absolute;
-        bottom: 16px;
-        left: 16px;
-        background: rgba(255, 255, 255, 0.92);
-        backdrop-filter: blur(8px);
-        padding: 8px 14px;
-        border-radius: 30px;
-        font-size: 12px;
-        font-weight: 500;
-        color: #333;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .badge-dot {
-        width: 6px;
-        height: 6px;
-        background-color: #B58A7E;
-        border-radius: 50%;
-        display: inline-block;
-    }
-
     /* Subtitle & Headings */
     .sub-tag {
         text-align: center;
@@ -118,11 +77,11 @@ st.markdown(
     .hero-heading {
         font-family: 'Playfair Display', serif;
         text-align: center;
-        font-size: 34px;
+        font-size: 32px;
         line-height: 1.18;
         font-weight: 600;
         color: #1A1A1A;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
     }
 
     .hero-heading em {
@@ -131,146 +90,196 @@ st.markdown(
         font-weight: 400;
     }
 
-    /* Call To Action Section (Immediate Access) */
+    /* Call To Action Container */
     .cta-container {
         background-color: #26211E;
         border-radius: 20px;
-        padding: 28px 20px;
-        margin-bottom: 40px;
+        padding: 24px 18px;
+        margin-bottom: 30px;
         color: #FFFFFF;
     }
 
     .cta-title-tag {
         text-align: center;
-        font-size: 11px;
+        font-size: 10px;
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: #C2A69B;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         font-weight: 500;
     }
 
     .cta-main-heading {
         font-family: 'Playfair Display', serif;
         text-align: center;
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 500;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         color: #F7F3EE;
     }
 
     .cta-subtext {
         text-align: center;
-        font-size: 13px;
+        font-size: 12px;
         color: #C0B7B1;
         line-height: 1.45;
-        margin-bottom: 24px;
-        padding: 0 10px;
+        margin-bottom: 20px;
+        padding: 0 5px;
     }
 
-    /* Button Styling */
-    .action-btn {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 16px 20px;
-        border-radius: 16px;
+    /* Streamlit Native Link Buttons Overrides */
+    div[data-testid="stLinkButton"] {
+        width: 100% !important;
+        margin-bottom: 12px !important;
+    }
+
+    div[data-testid="stLinkButton"] > a {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 14px 16px !important;
+        border-radius: 14px !important;
         text-decoration: none !important;
-        margin-bottom: 12px;
-        transition: all 0.2s ease;
-        box-sizing: border-box;
+        box-sizing: border-box !important;
+        transition: transform 0.15s ease, opacity 0.15s ease !important;
+        border: none !important;
     }
 
-    .btn-whatsapp {
-        background-color: #CFA396;
+    div[data-testid="stLinkButton"] > a:hover {
+        opacity: 0.92 !important;
+        transform: translateY(-1px) !important;
+    }
+
+    /* First Button (Accent Pinkish Bronze) */
+    div[data-testid="stElementContainer"]:nth-of-type(1) div[data-testid="stLinkButton"] > a {
+        background-color: #D3A89B !important;
         color: #1A1A1A !important;
     }
 
-    .btn-outline {
-        background-color: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Second & Third Buttons (Dark Glass Accent) */
+    div[data-testid="stElementContainer"]:nth-of-type(2) div[data-testid="stLinkButton"] > a,
+    div[data-testid="stElementContainer"]:nth-of-type(3) div[data-testid="stLinkButton"] > a {
+        background-color: rgba(255, 255, 255, 0.07) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
         color: #FFFFFF !important;
     }
 
-    .btn-content {
+    /* Button Layout Styling */
+    .btn-inner {
         display: flex;
         align-items: center;
-        gap: 14px;
+        gap: 12px;
+        width: 100%;
         text-align: left;
     }
 
-    .btn-icon {
+    .btn-circle-icon {
         width: 36px;
         height: 36px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 18px;
+        font-size: 16px;
         flex-shrink: 0;
     }
 
-    .btn-whatsapp .btn-icon {
+    .btn-circle-dark {
         background-color: #26211E;
         color: #FFFFFF;
     }
 
-    .btn-outline .btn-icon {
+    .btn-circle-light {
         background-color: #C2A69B;
         color: #26211E;
     }
 
-    .btn-text-main {
-        font-size: 14px;
+    .btn-title {
+        font-size: 13.5px;
         font-weight: 600;
-        line-height: 1.2;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
     }
 
-    .btn-text-sub {
-        font-size: 12px;
+    .btn-sub {
+        font-size: 11.5px;
         opacity: 0.75;
         font-weight: 400;
         margin-top: 2px;
     }
 
-    .arrow-icon {
+    .btn-arrow {
         font-size: 16px;
-        opacity: 0.7;
+        opacity: 0.8;
+        padding-left: 8px;
+    }
+
+    /* Hero Image */
+    .hero-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: #E2CDC4;
+        margin-bottom: 25px;
+    }
+
+    .hero-card img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+    }
+
+    .badge {
+        position: absolute;
+        bottom: 14px;
+        left: 14px;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(8px);
+        padding: 6px 12px;
+        border-radius: 30px;
+        font-size: 11px;
+        font-weight: 500;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .badge-dot {
+        width: 6px;
+        height: 6px;
+        background-color: #B58A7E;
+        border-radius: 50%;
     }
 
     /* Value Proposition Section */
     .text-block-card {
-        background-color: rgba(255,255,255,0.4);
+        background-color: rgba(255,255,255,0.5);
         border-radius: 16px;
-        padding: 24px 20px;
-        margin-bottom: 30px;
+        padding: 20px 18px;
+        margin-bottom: 25px;
         text-align: center;
     }
 
     .main-description {
-        font-size: 15px;
-        line-height: 1.6;
+        font-size: 14px;
+        line-height: 1.55;
         color: #4A423E;
-        margin-bottom: 24px;
+        margin-bottom: 20px;
     }
 
     .stats-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        padding-top: 20px;
+        gap: 16px;
+        padding-top: 16px;
         border-top: 1px solid rgba(0,0,0,0.08);
-        margin-bottom: 20px;
-    }
-
-    .stat-item {
-        text-align: center;
     }
 
     .stat-num {
         font-family: 'Playfair Display', serif;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 700;
         color: #1A1A1A;
     }
@@ -278,36 +287,32 @@ st.markdown(
     .stat-desc {
         font-size: 11px;
         color: #7A6E67;
-        margin-top: 4px;
+        margin-top: 2px;
         line-height: 1.3;
     }
 
     .stat-full {
         grid-column: span 2;
         text-align: center;
-        margin-top: 5px;
+        margin-top: 4px;
     }
 
     /* Features Section */
-    .feature-list {
-        padding: 10px 10px 30px 10px;
-    }
-
     .feature-item {
         text-align: center;
-        margin-bottom: 28px;
+        margin-bottom: 22px;
     }
 
     .feature-title {
         font-family: 'Playfair Display', serif;
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 600;
         color: #1A1A1A;
-        margin-bottom: 6px;
+        margin-bottom: 4px;
     }
 
     .feature-desc {
-        font-size: 13px;
+        font-size: 12.5px;
         color: #665C55;
         line-height: 1.5;
     }
@@ -315,19 +320,19 @@ st.markdown(
     /* Copy Block */
     .copy-block {
         text-align: center;
-        padding: 20px 10px 30px 10px;
+        padding: 15px 5px 25px 5px;
     }
 
     .copy-heading {
         font-family: 'Playfair Display', serif;
-        font-size: 26px;
+        font-size: 24px;
         line-height: 1.25;
         color: #1A1A1A;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
 
     .copy-text {
-        font-size: 13px;
+        font-size: 12.5px;
         line-height: 1.6;
         color: #5C524B;
     }
@@ -336,7 +341,7 @@ st.markdown(
         text-align: center;
         font-size: 11px;
         color: #8C7F77;
-        margin-top: 25px;
+        margin-top: 20px;
         line-height: 1.5;
     }
     </style>
@@ -344,7 +349,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# 1. Top Bar
+# 1. Header
 st.markdown(
     '<div class="top-header">CHAYA <span>JEWELLERY</span></div>',
     unsafe_allow_html=True,
@@ -352,7 +357,79 @@ st.markdown(
 
 st.markdown('<div class="content-wrapper">', unsafe_allow_html=True)
 
-# 2. Hero Image Section
+# 2. Main Title Section (Directly at top for non-scroll access)
+st.markdown(
+    """
+    <div class="sub-tag">— ZURICH · CERTIFIED DIAMONDS —</div>
+    <div class="hero-heading">
+        Design the <em>Perfect</em><br>Engagement Ring
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+# 3. CTA Block (Interactive Functional Streamlit Link Buttons)
+st.markdown(
+    """
+    <div class="cta-container">
+        <div class="cta-title-tag">START THE CONVERSATION</div>
+        <div class="cta-main-heading">Three ways to reach us</div>
+        <div class="cta-subtext">Pick whichever feels right — a quick chat, a browse, or a booked call.</div>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Working Button 1: WhatsApp
+st.link_button(
+    label="""
+        <div class="btn-inner">
+            <div class="btn-circle-icon btn-circle-dark">💬</div>
+            <div style="flex-grow: 1;">
+                <div class="btn-title">Chat with us on WhatsApp</div>
+                <div class="btn-sub">Usually replies within the hour</div>
+            </div>
+            <span class="btn-arrow">→</span>
+        </div>
+    """,
+    url="https://wa.me/41790000000",
+    use_container_width=True,
+)
+
+# Working Button 2: Website
+st.link_button(
+    label="""
+        <div class="btn-inner">
+            <div class="btn-circle-icon btn-circle-light">🌐</div>
+            <div style="flex-grow: 1;">
+                <div class="btn-title">Visit chaya-jewellery.ch</div>
+                <div class="btn-sub">See the full collection & craftsmanship</div>
+            </div>
+            <span class="btn-arrow">→</span>
+        </div>
+    """,
+    url="https://chaya-jewellery.ch",
+    use_container_width=True,
+)
+
+# Working Button 3: Calendly
+st.link_button(
+    label="""
+        <div class="btn-inner">
+            <div class="btn-circle-icon btn-circle-light">📅</div>
+            <div style="flex-grow: 1;">
+                <div class="btn-title">Book a 30-minute consultation</div>
+                <div class="btn-sub">Pick a slot on our Calendly</div>
+            </div>
+            <span class="btn-arrow">→</span>
+        </div>
+    """,
+    url="https://calendly.com",
+    use_container_width=True,
+)
+
+st.markdown("</div>", unsafe_allow_html=True)
+
+# 4. Hero Ring Image
 st.markdown(
     """
     <div class="hero-card">
@@ -365,66 +442,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# 3. Main Title Section
-st.markdown(
-    """
-    <div class="sub-tag">— ZURICH · CERTIFIED DIAMONDS —</div>
-    <div class="hero-heading">
-        Design the <em>Perfect</em><br>Engagement Ring
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-# 4. CTA Block Directly Accessible (Above scroll area on mobile viewports)
-st.markdown(
-    """
-    <div class="cta-container">
-        <div class="cta-title-tag">START THE CONVERSATION</div>
-        <div class="cta-main-heading">Three ways to reach us</div>
-        <div class="cta-subtext">Pick whichever feels right — a quick chat, a browse, or a booked call.</div>
-        
-        <!-- Button 1: WhatsApp -->
-        <a href="https://wa.me/41790000000" target="_blank" class="action-btn btn-whatsapp">
-            <div class="btn-content">
-                <div class="btn-icon">💬</div>
-                <div>
-                    <div class="btn-text-main">Chat with us on WhatsApp</div>
-                    <div class="btn-text-sub">Usually replies within the hour</div>
-                </div>
-            </div>
-            <span class="arrow-icon">→</span>
-        </a>
-
-        <!-- Button 2: Website -->
-        <a href="https://chaya-jewellery.ch" target="_blank" class="action-btn btn-outline">
-            <div class="btn-content">
-                <div class="btn-icon">🌐</div>
-                <div>
-                    <div class="btn-text-main">Visit chaya-jewellery.ch</div>
-                    <div class="btn-text-sub">See the full collection & craftsmanship</div>
-                </div>
-            </div>
-            <span class="arrow-icon">→</span>
-        </a>
-
-        <!-- Button 3: Calendly Call -->
-        <a href="https://calendly.com" target="_blank" class="action-btn btn-outline">
-            <div class="btn-content">
-                <div class="btn-icon">📅</div>
-                <div>
-                    <div class="btn-text-main">Book a 30-minute consultation</div>
-                    <div class="btn-text-sub">Pick a slot on our Calendly</div>
-                </div>
-            </div>
-            <span class="arrow-icon">→</span>
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-# 5. Value Proposition & Guarantee Section
+# 5. Guarantee Card
 st.markdown(
     """
     <div class="text-block-card">
@@ -450,10 +468,10 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# 6. Feature List
+# 6. Features Breakdown
 st.markdown(
     """
-    <div class="feature-list">
+    <div>
         <div class="feature-item">
             <div class="feature-title">Priced with integrity</div>
             <div class="feature-desc">No showroom markup — the same stone, without the price built for one.</div>
@@ -471,7 +489,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# 7. Additional Editorial Copy Block
+# 7. Editorial Section
 st.markdown(
     """
     <div class="copy-block">
