@@ -445,7 +445,7 @@ st.html(
 st.markdown(
     """
     <div class="hero-card">
-        <img src="https://unsplash.com/photos/person-holding-another-persons-hand-with-ring-FOwYSRlL-Bk https://unsplash.com/photos/person-holding-another-persons-hand-with-ring-FOwYSRlL-Bk?utm_source=unsplash&utm_campaign=unsplash-ios&utm_medium=referral&utm_content=view-photo-on-unsplash" alt="Diamond Engagement Ring" />
+        <img src="https://images.unsplash.com/photo-FOwYSRlL-Bk?q=80&w=1000&auto=format&fit=crop" alt="Diamond Engagement Ring" />
         <div class="badge">
             <span class="badge-dot"></span> Ethically sourced, since 1976
         </div>
@@ -453,6 +453,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 # Stats Counter Section
