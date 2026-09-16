@@ -420,7 +420,7 @@ st.html(
                 <span class="btn-arrow">→</span>
             </a>
 
-            <a href="https://chaya-jewellery.ch/collections/round-u-diamond-ring/" target="_blank" class="custom-btn btn-outline">
+            <a href="https://chaya-jewellery.ch/collections/?_stone_type_hierarchical=engagement-ring" target="_blank" class="custom-btn btn-outline">
                 <div class="btn-inner">
                     <div class="btn-circle-icon btn-circle-light">🌐</div>
                     <div>
@@ -491,7 +491,7 @@ st.html(
             </div>
             <div class="pillar-card">
                 <div class="pillar-title">Proposal, planned</div>
-                <div class="pillar-desc">Ring, timeline, and setting sorted together — in 30 days.</div>
+                <div class="pillar-desc">Ring, timeline, and setting sorted together — in 40 days.</div>
             </div>
         </div>
 
