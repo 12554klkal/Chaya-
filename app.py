@@ -17,7 +17,7 @@ st.html(
     header {display: none !important;}
     .stAppHeader {display: none !important;}
     
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
     html, body, [class*="css"] {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
@@ -216,6 +216,7 @@ st.html(
 
     .hero-card img {
         width: 100%;
+        height: 340px;
         display: block;
         object-fit: cover;
     }
@@ -257,6 +258,11 @@ st.html(
         line-height: 1.55;
         color: #4A423E;
         margin-bottom: 20px;
+    }
+
+    .main-description strong {
+        color: #1A1A1A;
+        font-weight: 600;
     }
 
     .stats-grid {
@@ -426,11 +432,11 @@ st.html(
     """
 )
 
-# Render Showcase Ring Image
+# Render Showcase Ring Image from Unsplash
 st.markdown(
     """
     <div class="hero-card">
-        <img src="https://chaya-jewellery.ch/cdn/shop/files/RoundUDiamondRing.jpg" alt="Round U Diamond Ring" />
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1000&auto=format&fit=crop" alt="Diamond Engagement Ring" />
         <div class="badge">
             <span class="badge-dot"></span> Ethically sourced, since 1976
         </div>
@@ -439,18 +445,18 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Remaining Sections with Sleeker Pillars & Editorial Block
+# Guarantee Section with bold text
 st.html(
     """
         <!-- Guarantee Section -->
         <div class="text-block-card">
             <div class="main-description">
-                Get the **best-price certified** diamond engagement ring in Switzerland and a **lifetime warantee** in 40 days or less — or you get your **money back.**
+                Get the <strong>best-price certified</strong> diamond engagement ring in Switzerland and a <strong>lifetime warranty</strong> in 40 days or less — or you get your <strong>money back.</strong>
             </div>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-num">30</div>
-                    <div class="stat-desc">days to a<br>planned proposal</div>
+                    <div class="stat-num">40</div>
+                    <div class="stat-desc">days or less<br>turnaround</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-num">GIA</div>
