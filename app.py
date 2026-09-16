@@ -444,8 +444,8 @@ st.html(
     """
         <!-- Guarantee Section -->
         <div class="text-block-card">
-            <div class="main-description">f
-                Get the best-price certified diamond engagement ring in Switzerland and a lifetime warantee in 40 days or less — or you get your money back.
+            <div class="main-description">
+                Get the **best-price certified** diamond engagement ring in Switzerland and a **lifetime warantee** in 40 days or less — or you get your **money back.**
             </div>
             <div class="stats-grid">
                 <div class="stat-item">
