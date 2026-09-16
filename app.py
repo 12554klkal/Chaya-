@@ -445,8 +445,7 @@ st.html(
 st.markdown(
     """
     <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-9_35SjwzpnU?q=80&w=1000&auto=format&fit=crop" alt="Silver Diamond Studded Heart Pendant" />
-        <div class="badge">
+        <img src="https://teachjewelry.com/wp-content/uploads/2024/06/a-wedding-engagement-ring.jpg">
             <span class="badge-dot"></span> Ethically sourced, since 1976
         </div>
     </div>
