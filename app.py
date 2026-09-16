@@ -17,7 +17,7 @@ st.html(
     header {display: none !important;}
     .stAppHeader {display: none !important;}
     
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
 
     html, body, [class*="css"] {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
@@ -63,12 +63,12 @@ st.html(
 
     .sub-tag {
         text-align: center;
-        font-size: 11px;
-        letter-spacing: 0.22em;
+        font-size: 10px;
+        letter-spacing: 0.24em;
         text-transform: uppercase;
         color: #A38C82;
-        margin-bottom: 12px;
-        font-weight: 500;
+        margin-bottom: 10px;
+        font-weight: 600;
     }
 
     .hero-heading {
@@ -92,7 +92,7 @@ st.html(
         background-color: #26211E;
         border-radius: 20px;
         padding: 26px 18px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         color: #FFFFFF;
     }
 
@@ -244,9 +244,10 @@ st.html(
     }
 
     .text-block-card {
-        background-color: rgba(255,255,255,0.5);
-        border-radius: 16px;
-        padding: 20px 18px;
+        background-color: rgba(255,255,255,0.55);
+        border: 1px solid rgba(0,0,0,0.04);
+        border-radius: 18px;
+        padding: 22px 20px;
         margin-bottom: 25px;
         text-align: center;
     }
@@ -286,42 +287,77 @@ st.html(
         margin-top: 4px;
     }
 
-    .feature-item {
-        text-align: center;
-        margin-bottom: 22px;
+    /* REFINED LUXURY PILLARS */
+    .pillar-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 25px;
     }
 
-    .feature-title {
+    .pillar-card {
+        background: #FFFFFF;
+        border-radius: 16px;
+        padding: 18px 20px;
+        border: 1px solid rgba(181, 138, 126, 0.15);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.015);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pillar-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background-color: #B58A7E;
+        opacity: 0.6;
+    }
+
+    .pillar-title {
         font-family: 'Playfair Display', serif;
-        font-size: 17px;
+        font-size: 18px;
         font-weight: 600;
         color: #1A1A1A;
+        letter-spacing: -0.01em;
         margin-bottom: 4px;
     }
 
-    .feature-desc {
+    .pillar-desc {
         font-size: 12.5px;
-        color: #665C55;
         line-height: 1.5;
+        color: #665C55;
+        font-weight: 400;
     }
 
-    .copy-block {
+    /* SLEEK EDITORIAL FEATURE BOX */
+    .story-card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(247, 243, 238, 0.4) 100%);
+        border: 1px solid rgba(181, 138, 126, 0.25);
+        border-radius: 20px;
+        padding: 28px 22px;
         text-align: center;
-        padding: 15px 5px 25px 5px;
+        margin-bottom: 25px;
     }
 
-    .copy-heading {
+    .story-heading {
         font-family: 'Playfair Display', serif;
-        font-size: 24px;
+        font-size: 23px;
         line-height: 1.25;
+        font-weight: 600;
         color: #1A1A1A;
         margin-bottom: 12px;
     }
 
-    .copy-text {
-        font-size: 12.5px;
-        line-height: 1.6;
-        color: #5C524B;
+    .story-body {
+        font-size: 12.8px;
+        line-height: 1.65;
+        color: #524843;
+        font-weight: 400;
+        max-width: 360px;
+        margin: 0 auto;
     }
 
     .footer-note {
@@ -330,6 +366,7 @@ st.html(
         color: #8C7F77;
         margin-top: 20px;
         line-height: 1.5;
+        letter-spacing: 0.02em;
     }
     </style>
     """
@@ -389,7 +426,7 @@ st.html(
     """
 )
 
-# Render Showcase Ring Image from Website Collection
+# Render Showcase Ring Image
 st.markdown(
     """
     <div class="hero-card">
@@ -402,13 +439,13 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Remaining Sections
+# Remaining Sections with Sleeker Pillars & Editorial Block
 st.html(
     """
         <!-- Guarantee Section -->
         <div class="text-block-card">
-            <div class="main-description">
-                Get the best-price certified diamond engagement ring in Switzerland and a fully planned proposal in 30 days — or you get your money back.
+            <div class="main-description">f
+                Get the best-price certified diamond engagement ring in Switzerland and a lifetime warantee in 40 days or less — or you get your money back.
             </div>
             <div class="stats-grid">
                 <div class="stat-item">
@@ -426,27 +463,27 @@ st.html(
             </div>
         </div>
 
-        <!-- Value Points -->
-        <div>
-            <div class="feature-item">
-                <div class="feature-title">Priced with integrity</div>
-                <div class="feature-desc">No showroom markup — the same stone, without the price built for one.</div>
+        <!-- Sleek Feature Pillars -->
+        <div class="pillar-stack">
+            <div class="pillar-card">
+                <div class="pillar-title">Priced with integrity</div>
+                <div class="pillar-desc">No showroom markup — the same stone, without the price built for one.</div>
             </div>
-            <div class="feature-item">
-                <div class="feature-title">Master goldsmiths</div>
-                <div class="feature-desc">Every setting is hand-finished in-house, not outsourced.</div>
+            <div class="pillar-card">
+                <div class="pillar-title">Master goldsmiths</div>
+                <div class="pillar-desc">Every setting is hand-finished in-house, not outsourced.</div>
             </div>
-            <div class="feature-item">
-                <div class="feature-title">Proposal, planned</div>
-                <div class="feature-desc">Ring, timeline, and setting sorted together — in 30 days.</div>
+            <div class="pillar-card">
+                <div class="pillar-title">Proposal, planned</div>
+                <div class="pillar-desc">Ring, timeline, and setting sorted together — in 30 days.</div>
             </div>
         </div>
 
-        <!-- Story Block -->
-        <div class="copy-block">
+        <!-- Sleek Editorial Card -->
+        <div class="story-card">
             <div class="sub-tag">WORN TODAY, TREASURED TOMORROW</div>
-            <div class="copy-heading">One ring. One decision that has to be right.</div>
-            <div class="copy-text">
+            <div class="story-heading">One ring. One decision that has to be right.</div>
+            <div class="story-body">
                 Tell us the stone, the budget, and the date you're working toward. We'll shortlist certified diamonds, size the setting, and have it ready in time — no back-and-forth with three different jewellers.
             </div>
         </div>
