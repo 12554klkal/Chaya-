@@ -7,7 +7,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# Custom Styling (Injected directly into head via st.html)
+# Custom Styling
 st.html(
     """
     <style>
@@ -335,25 +335,24 @@ st.html(
     """
 )
 
-# Render Full Single Page Mobile HTML
+# Render Header & Interactive CTA Buttons
 st.html(
     """
     <div class="top-header">CHAYA <span>JEWELLERY</span></div>
 
     <div class="content-wrapper">
-        <!-- 1. Heading directly at top -->
+        <!-- Heading -->
         <div class="sub-tag">— ZURICH · CERTIFIED DIAMONDS —</div>
         <div class="hero-heading">
             Design the <em>Perfect</em><br>Engagement Ring
         </div>
 
-        <!-- 2. Interactive Working Buttons Box -->
+        <!-- Interactive Working Buttons Container -->
         <div class="cta-container">
             <div class="cta-title-tag">START THE CONVERSATION</div>
             <div class="cta-main-heading">Three ways to reach us</div>
             <div class="cta-subtext">Pick whichever feels right — a quick chat, a browse, or a booked call.</div>
             
-            <!-- Button 1 -->
             <a href="https://wa.me/41790000000" target="_blank" class="custom-btn btn-whatsapp">
                 <div class="btn-inner">
                     <div class="btn-circle-icon btn-circle-dark">💬</div>
@@ -365,7 +364,6 @@ st.html(
                 <span class="btn-arrow">→</span>
             </a>
 
-            <!-- Button 2 -->
             <a href="https://chaya-jewellery.ch" target="_blank" class="custom-btn btn-outline">
                 <div class="btn-inner">
                     <div class="btn-circle-icon btn-circle-light">🌐</div>
@@ -377,7 +375,6 @@ st.html(
                 <span class="btn-arrow">→</span>
             </a>
 
-            <!-- Button 3 -->
             <a href="https://calendly.com" target="_blank" class="custom-btn btn-outline">
                 <div class="btn-inner">
                     <div class="btn-circle-icon btn-circle-light">📅</div>
@@ -389,16 +386,26 @@ st.html(
                 <span class="btn-arrow">→</span>
             </a>
         </div>
+    """
+)
 
-        <!-- 3. Ring Showcase Image -->
-        <div class="hero-card">
-            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800" alt="Ring in Box" />
-            <div class="badge">
-                <span class="badge-dot"></span> Ethically sourced, since 1976
-            </div>
+# Render Local Showcase Ring Image
+st.markdown(
+    """
+    <div class="hero-card">
+        <img src="ring.png" alt="Engagement Ring FOR HER" />
+        <div class="badge">
+            <span class="badge-dot"></span> Ethically sourced, since 1976
         </div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
-        <!-- 4. Guarantee Section -->
+# Remaining Sections
+st.html(
+    """
+        <!-- Guarantee Section -->
         <div class="text-block-card">
             <div class="main-description">
                 Get the best-price certified diamond engagement ring in Switzerland and a fully planned proposal in 30 days — or you get your money back.
@@ -419,7 +426,7 @@ st.html(
             </div>
         </div>
 
-        <!-- 5. Value Points -->
+        <!-- Value Points -->
         <div>
             <div class="feature-item">
                 <div class="feature-title">Priced with integrity</div>
@@ -435,7 +442,7 @@ st.html(
             </div>
         </div>
 
-        <!-- 6. Bottom Story Block -->
+        <!-- Story Block -->
         <div class="copy-block">
             <div class="sub-tag">WORN TODAY, TREASURED TOMORROW</div>
             <div class="copy-heading">One ring. One decision that has to be right.</div>
@@ -444,7 +451,7 @@ st.html(
             </div>
         </div>
 
-        <!-- 7. Footer Tagline -->
+        <!-- Footer Tagline -->
         <div class="footer-note">
             Certified by GIA, IGI & HRD · Master goldsmiths since 1976 · Zurich, Switzerland
         </div>
