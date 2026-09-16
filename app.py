@@ -364,7 +364,7 @@ st.html(
                 <span class="btn-arrow">→</span>
             </a>
 
-            <a href="https://chaya-jewellery.ch" target="_blank" class="custom-btn btn-outline">
+            <a href="https://chaya-jewellery.ch/collections/round-u-diamond-ring/" target="_blank" class="custom-btn btn-outline">
                 <div class="btn-inner">
                     <div class="btn-circle-icon btn-circle-light">🌐</div>
                     <div>
@@ -389,11 +389,11 @@ st.html(
     """
 )
 
-# Render Local Showcase Ring Image (Updated file name)
+# Render Showcase Ring Image from Website Collection
 st.markdown(
     """
     <div class="hero-card">
-        <img src="ring.png.PNG" alt="Engagement Ring FOR HER" />
+        <img src="https://chaya-jewellery.ch/cdn/shop/files/RoundUDiamondRing.jpg" alt="Round U Diamond Ring" />
         <div class="badge">
             <span class="badge-dot"></span> Ethically sourced, since 1976
         </div>
