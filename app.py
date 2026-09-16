@@ -1,6 +1,5 @@
 import streamlit as st
 
-# Page setup
 st.set_page_config(
     page_title="CHAYA JEWELLERY",
     page_icon="💍",
@@ -8,27 +7,28 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# Custom Global Styling
-st.markdown(
+# Custom Styling (Injected directly into head via st.html)
+st.html(
     """
     <style>
     /* Hide Streamlit default interface elements */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
+    #MainMenu {display: none !important;}
+    footer {display: none !important;}
+    header {display: none !important;}
+    .stAppHeader {display: none !important;}
     
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
     html, body, [class*="css"] {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        background-color: #F7F3EE;
-        color: #2B2523;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+        background-color: #F7F3EE !important;
+        color: #2B2523 !important;
     }
 
     .stApp {
-        background-color: #F7F3EE;
-        max-width: 450px;
-        margin: 0 auto;
+        background-color: #F7F3EE !important;
+        max-width: 450px !important;
+        margin: 0 auto !important;
     }
 
     .block-container {
@@ -36,7 +36,7 @@ st.markdown(
         max-width: 100% !important;
     }
 
-    /* Top Navigation Header */
+    /* Sticky Navigation Header */
     .top-header {
         position: sticky;
         top: 0;
@@ -87,7 +87,7 @@ st.markdown(
         font-weight: 400;
     }
 
-    /* Dark CTA Card Container */
+    /* Dark Call To Action Box */
     .cta-container {
         background-color: #26211E;
         border-radius: 20px;
@@ -124,8 +124,8 @@ st.markdown(
         padding: 0 5px;
     }
 
-    /* Working Clickable Buttons Styles */
-    .custom-btn {
+    /* Working Clickable Buttons */
+    a.custom-btn {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
@@ -135,22 +135,24 @@ st.markdown(
         text-decoration: none !important;
         box-sizing: border-box !important;
         margin-bottom: 12px !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
         transition: transform 0.15s ease, opacity 0.15s ease !important;
     }
 
-    .custom-btn:hover {
-        opacity: 0.92;
-        transform: translateY(-1px);
+    a.custom-btn:hover {
+        opacity: 0.92 !important;
+        transform: translateY(-1px) !important;
     }
 
     .btn-whatsapp {
-        background-color: #D3A89B;
+        background-color: #D3A89B !important;
         color: #1A1A1A !important;
     }
 
     .btn-outline {
-        background-color: rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        background-color: rgba(255, 255, 255, 0.07) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
         color: #FFFFFF !important;
     }
 
@@ -203,7 +205,7 @@ st.markdown(
         padding-left: 8px;
     }
 
-    /* Hero Card & Details */
+    /* Images and Cards */
     .hero-card {
         position: relative;
         border-radius: 20px;
@@ -330,159 +332,122 @@ st.markdown(
         line-height: 1.5;
     }
     </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-# 1. Header
-st.markdown(
-    '<div class="top-header">CHAYA <span>JEWELLERY</span></div>',
-    unsafe_allow_html=True,
-)
-
-st.markdown('<div class="content-wrapper">', unsafe_allow_html=True)
-
-# 2. Main Title Section
-st.markdown(
     """
-    <div class="sub-tag">— ZURICH · CERTIFIED DIAMONDS —</div>
-    <div class="hero-heading">
-        Design the <em>Perfect</em><br>Engagement Ring
-    </div>
-    """,
-    unsafe_allow_html=True,
 )
 
-# 3. Call To Action Dark Box with Functional Rendered Buttons
-st.markdown(
+# Render Full Single Page Mobile HTML
+st.html(
     """
-    <div class="cta-container">
-        <div class="cta-title-tag">START THE CONVERSATION</div>
-        <div class="cta-main-heading">Three ways to reach us</div>
-        <div class="cta-subtext">Pick whichever feels right — a quick chat, a browse, or a booked call.</div>
-        
-        <!-- Functional Button 1: WhatsApp -->
-        <a href="https://wa.me/41790000000" target="_blank" class="custom-btn btn-whatsapp">
-            <div class="btn-inner">
-                <div class="btn-circle-icon btn-circle-dark">💬</div>
-                <div>
-                    <div class="btn-title">Chat with us on WhatsApp</div>
-                    <div class="btn-sub">Usually replies within the hour</div>
+    <div class="top-header">CHAYA <span>JEWELLERY</span></div>
+
+    <div class="content-wrapper">
+        <!-- 1. Heading directly at top -->
+        <div class="sub-tag">— ZURICH · CERTIFIED DIAMONDS —</div>
+        <div class="hero-heading">
+            Design the <em>Perfect</em><br>Engagement Ring
+        </div>
+
+        <!-- 2. Interactive Working Buttons Box -->
+        <div class="cta-container">
+            <div class="cta-title-tag">START THE CONVERSATION</div>
+            <div class="cta-main-heading">Three ways to reach us</div>
+            <div class="cta-subtext">Pick whichever feels right — a quick chat, a browse, or a booked call.</div>
+            
+            <!-- Button 1 -->
+            <a href="https://wa.me/41790000000" target="_blank" class="custom-btn btn-whatsapp">
+                <div class="btn-inner">
+                    <div class="btn-circle-icon btn-circle-dark">💬</div>
+                    <div>
+                        <div class="btn-title">Chat with us on WhatsApp</div>
+                        <div class="btn-sub">Usually replies within the hour</div>
+                    </div>
+                </div>
+                <span class="btn-arrow">→</span>
+            </a>
+
+            <!-- Button 2 -->
+            <a href="https://chaya-jewellery.ch" target="_blank" class="custom-btn btn-outline">
+                <div class="btn-inner">
+                    <div class="btn-circle-icon btn-circle-light">🌐</div>
+                    <div>
+                        <div class="btn-title">Visit chaya-jewellery.ch</div>
+                        <div class="btn-sub">See the full collection & craftsmanship</div>
+                    </div>
+                </div>
+                <span class="btn-arrow">→</span>
+            </a>
+
+            <!-- Button 3 -->
+            <a href="https://calendly.com" target="_blank" class="custom-btn btn-outline">
+                <div class="btn-inner">
+                    <div class="btn-circle-icon btn-circle-light">📅</div>
+                    <div>
+                        <div class="btn-title">Book a 30-minute consultation</div>
+                        <div class="btn-sub">Pick a slot on our Calendly</div>
+                    </div>
+                </div>
+                <span class="btn-arrow">→</span>
+            </a>
+        </div>
+
+        <!-- 3. Ring Showcase Image -->
+        <div class="hero-card">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800" alt="Ring in Box" />
+            <div class="badge">
+                <span class="badge-dot"></span> Ethically sourced, since 1976
+            </div>
+        </div>
+
+        <!-- 4. Guarantee Section -->
+        <div class="text-block-card">
+            <div class="main-description">
+                Get the best-price certified diamond engagement ring in Switzerland and a fully planned proposal in 30 days — or you get your money back.
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-num">30</div>
+                    <div class="stat-desc">days to a<br>planned proposal</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">GIA</div>
+                    <div class="stat-desc">& IGI certified<br>stones</div>
+                </div>
+                <div class="stat-full">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-desc">money-back guarantee</div>
                 </div>
             </div>
-            <span class="btn-arrow">→</span>
-        </a>
-
-        <!-- Functional Button 2: Website -->
-        <a href="https://chaya-jewellery.ch" target="_blank" class="custom-btn btn-outline">
-            <div class="btn-inner">
-                <div class="btn-circle-icon btn-circle-light">🌐</div>
-                <div>
-                    <div class="btn-title">Visit chaya-jewellery.ch</div>
-                    <div class="btn-sub">See the full collection & craftsmanship</div>
-                </div>
-            </div>
-            <span class="btn-arrow">→</span>
-        </a>
-
-        <!-- Functional Button 3: Calendly -->
-        <a href="https://calendly.com" target="_blank" class="custom-btn btn-outline">
-            <div class="btn-inner">
-                <div class="btn-circle-icon btn-circle-light">📅</div>
-                <div>
-                    <div class="btn-title">Book a 30-minute consultation</div>
-                    <div class="btn-sub">Pick a slot on our Calendly</div>
-                </div>
-            </div>
-            <span class="btn-arrow">→</span>
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-# 4. Ring Image Section
-st.markdown(
-    """
-    <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800" alt="Engagement Ring in Box" />
-        <div class="badge">
-            <span class="badge-dot"></span> Ethically sourced, since 1976
         </div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
 
-# 5. Guarantee Section
-st.markdown(
-    """
-    <div class="text-block-card">
-        <div class="main-description">
-            Get the best-price certified diamond engagement ring in Switzerland and a fully planned proposal in 30 days — or you get your money back.
-        </div>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-num">30</div>
-                <div class="stat-desc">days to a<br>planned proposal</div>
+        <!-- 5. Value Points -->
+        <div>
+            <div class="feature-item">
+                <div class="feature-title">Priced with integrity</div>
+                <div class="feature-desc">No showroom markup — the same stone, without the price built for one.</div>
             </div>
-            <div class="stat-item">
-                <div class="stat-num">GIA</div>
-                <div class="stat-desc">& IGI certified<br>stones</div>
+            <div class="feature-item">
+                <div class="feature-title">Master goldsmiths</div>
+                <div class="feature-desc">Every setting is hand-finished in-house, not outsourced.</div>
             </div>
-            <div class="stat-full">
-                <div class="stat-num">100%</div>
-                <div class="stat-desc">money-back guarantee</div>
+            <div class="feature-item">
+                <div class="feature-title">Proposal, planned</div>
+                <div class="feature-desc">Ring, timeline, and setting sorted together — in 30 days.</div>
             </div>
         </div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
 
-# 6. Feature Breakdown
-st.markdown(
+        <!-- 6. Bottom Story Block -->
+        <div class="copy-block">
+            <div class="sub-tag">WORN TODAY, TREASURED TOMORROW</div>
+            <div class="copy-heading">One ring. One decision that has to be right.</div>
+            <div class="copy-text">
+                Tell us the stone, the budget, and the date you're working toward. We'll shortlist certified diamonds, size the setting, and have it ready in time — no back-and-forth with three different jewellers.
+            </div>
+        </div>
+
+        <!-- 7. Footer Tagline -->
+        <div class="footer-note">
+            Certified by GIA, IGI & HRD · Master goldsmiths since 1976 · Zurich, Switzerland
+        </div>
+    </div>
     """
-    <div>
-        <div class="feature-item">
-            <div class="feature-title">Priced with integrity</div>
-            <div class="feature-desc">No showroom markup — the same stone, without the price built for one.</div>
-        </div>
-        <div class="feature-item">
-            <div class="feature-title">Master goldsmiths</div>
-            <div class="feature-desc">Every setting is hand-finished in-house, not outsourced.</div>
-        </div>
-        <div class="feature-item">
-            <div class="feature-title">Proposal, planned</div>
-            <div class="feature-desc">Ring, timeline, and setting sorted together — in 30 days.</div>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True,
 )
-
-# 7. Editorial Copy
-st.markdown(
-    """
-    <div class="copy-block">
-        <div class="sub-tag">WORN TODAY, TREASURED TOMORROW</div>
-        <div class="copy-heading">One ring. One decision that has to be right.</div>
-        <div class="copy-text">
-            Tell us the stone, the budget, and the date you're working toward. We'll shortlist certified diamonds, size the setting, and have it ready in time — no back-and-forth with three different jewellers.
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-# 8. Footer
-st.markdown(
-    """
-    <div class="footer-note">
-        Certified by GIA, IGI & HRD · Master goldsmiths since 1976 · Zurich, Switzerland
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-st.markdown("</div>", unsafe_allow_html=True)
