@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Set page layout and title
+# Page setup
 st.set_page_config(
     page_title="CHAYA JEWELLERY",
     page_icon="💍",
@@ -8,16 +8,15 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# Custom Styling to match the exact mobile design perfectly
+# Custom Global Styling
 st.markdown(
     """
     <style>
-    /* Hide default Streamlit headers, footers, and padding */
+    /* Hide Streamlit default interface elements */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
     
-    /* Import Serif & Sans-Serif Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
     html, body, [class*="css"] {
@@ -37,7 +36,7 @@ st.markdown(
         max-width: 100% !important;
     }
 
-    /* Top Sticky Header */
+    /* Top Navigation Header */
     .top-header {
         position: sticky;
         top: 0;
@@ -58,12 +57,10 @@ st.markdown(
         font-weight: 400;
     }
 
-    /* Main Container */
     .content-wrapper {
         padding: 20px 20px 40px 20px;
     }
 
-    /* Subtitle & Headings */
     .sub-tag {
         text-align: center;
         font-size: 11px;
@@ -90,11 +87,11 @@ st.markdown(
         font-weight: 400;
     }
 
-    /* Call To Action Container */
+    /* Dark CTA Card Container */
     .cta-container {
         background-color: #26211E;
         border-radius: 20px;
-        padding: 24px 18px;
+        padding: 26px 18px;
         margin-bottom: 30px;
         color: #FFFFFF;
     }
@@ -123,49 +120,40 @@ st.markdown(
         font-size: 12px;
         color: #C0B7B1;
         line-height: 1.45;
-        margin-bottom: 20px;
+        margin-bottom: 22px;
         padding: 0 5px;
     }
 
-    /* Streamlit Native Link Buttons Overrides */
-    div[data-testid="stLinkButton"] {
-        width: 100% !important;
-        margin-bottom: 12px !important;
-    }
-
-    div[data-testid="stLinkButton"] > a {
-        width: 100% !important;
+    /* Working Clickable Buttons Styles */
+    .custom-btn {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
+        width: 100% !important;
         padding: 14px 16px !important;
         border-radius: 14px !important;
         text-decoration: none !important;
         box-sizing: border-box !important;
+        margin-bottom: 12px !important;
         transition: transform 0.15s ease, opacity 0.15s ease !important;
-        border: none !important;
     }
 
-    div[data-testid="stLinkButton"] > a:hover {
-        opacity: 0.92 !important;
-        transform: translateY(-1px) !important;
+    .custom-btn:hover {
+        opacity: 0.92;
+        transform: translateY(-1px);
     }
 
-    /* First Button (Accent Pinkish Bronze) */
-    div[data-testid="stElementContainer"]:nth-of-type(1) div[data-testid="stLinkButton"] > a {
-        background-color: #D3A89B !important;
+    .btn-whatsapp {
+        background-color: #D3A89B;
         color: #1A1A1A !important;
     }
 
-    /* Second & Third Buttons (Dark Glass Accent) */
-    div[data-testid="stElementContainer"]:nth-of-type(2) div[data-testid="stLinkButton"] > a,
-    div[data-testid="stElementContainer"]:nth-of-type(3) div[data-testid="stLinkButton"] > a {
-        background-color: rgba(255, 255, 255, 0.07) !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    .btn-outline {
+        background-color: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         color: #FFFFFF !important;
     }
 
-    /* Button Layout Styling */
     .btn-inner {
         display: flex;
         align-items: center;
@@ -215,7 +203,7 @@ st.markdown(
         padding-left: 8px;
     }
 
-    /* Hero Image */
+    /* Hero Card & Details */
     .hero-card {
         position: relative;
         border-radius: 20px;
@@ -253,7 +241,6 @@ st.markdown(
         border-radius: 50%;
     }
 
-    /* Value Proposition Section */
     .text-block-card {
         background-color: rgba(255,255,255,0.5);
         border-radius: 16px;
@@ -297,7 +284,6 @@ st.markdown(
         margin-top: 4px;
     }
 
-    /* Features Section */
     .feature-item {
         text-align: center;
         margin-bottom: 22px;
@@ -317,7 +303,6 @@ st.markdown(
         line-height: 1.5;
     }
 
-    /* Copy Block */
     .copy-block {
         text-align: center;
         padding: 15px 5px 25px 5px;
@@ -357,7 +342,7 @@ st.markdown(
 
 st.markdown('<div class="content-wrapper">', unsafe_allow_html=True)
 
-# 2. Main Title Section (Directly at top for non-scroll access)
+# 2. Main Title Section
 st.markdown(
     """
     <div class="sub-tag">— ZURICH · CERTIFIED DIAMONDS —</div>
@@ -368,68 +353,55 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# 3. CTA Block (Interactive Functional Streamlit Link Buttons)
+# 3. Call To Action Dark Box with Functional Rendered Buttons
 st.markdown(
     """
     <div class="cta-container">
         <div class="cta-title-tag">START THE CONVERSATION</div>
         <div class="cta-main-heading">Three ways to reach us</div>
         <div class="cta-subtext">Pick whichever feels right — a quick chat, a browse, or a booked call.</div>
+        
+        <!-- Functional Button 1: WhatsApp -->
+        <a href="https://wa.me/41790000000" target="_blank" class="custom-btn btn-whatsapp">
+            <div class="btn-inner">
+                <div class="btn-circle-icon btn-circle-dark">💬</div>
+                <div>
+                    <div class="btn-title">Chat with us on WhatsApp</div>
+                    <div class="btn-sub">Usually replies within the hour</div>
+                </div>
+            </div>
+            <span class="btn-arrow">→</span>
+        </a>
+
+        <!-- Functional Button 2: Website -->
+        <a href="https://chaya-jewellery.ch" target="_blank" class="custom-btn btn-outline">
+            <div class="btn-inner">
+                <div class="btn-circle-icon btn-circle-light">🌐</div>
+                <div>
+                    <div class="btn-title">Visit chaya-jewellery.ch</div>
+                    <div class="btn-sub">See the full collection & craftsmanship</div>
+                </div>
+            </div>
+            <span class="btn-arrow">→</span>
+        </a>
+
+        <!-- Functional Button 3: Calendly -->
+        <a href="https://calendly.com" target="_blank" class="custom-btn btn-outline">
+            <div class="btn-inner">
+                <div class="btn-circle-icon btn-circle-light">📅</div>
+                <div>
+                    <div class="btn-title">Book a 30-minute consultation</div>
+                    <div class="btn-sub">Pick a slot on our Calendly</div>
+                </div>
+            </div>
+            <span class="btn-arrow">→</span>
+        </a>
+    </div>
     """,
     unsafe_allow_html=True,
 )
 
-# Working Button 1: WhatsApp
-st.link_button(
-    label="""
-        <div class="btn-inner">
-            <div class="btn-circle-icon btn-circle-dark">💬</div>
-            <div style="flex-grow: 1;">
-                <div class="btn-title">Chat with us on WhatsApp</div>
-                <div class="btn-sub">Usually replies within the hour</div>
-            </div>
-            <span class="btn-arrow">→</span>
-        </div>
-    """,
-    url="https://wa.me/41790000000",
-    use_container_width=True,
-)
-
-# Working Button 2: Website
-st.link_button(
-    label="""
-        <div class="btn-inner">
-            <div class="btn-circle-icon btn-circle-light">🌐</div>
-            <div style="flex-grow: 1;">
-                <div class="btn-title">Visit chaya-jewellery.ch</div>
-                <div class="btn-sub">See the full collection & craftsmanship</div>
-            </div>
-            <span class="btn-arrow">→</span>
-        </div>
-    """,
-    url="https://chaya-jewellery.ch",
-    use_container_width=True,
-)
-
-# Working Button 3: Calendly
-st.link_button(
-    label="""
-        <div class="btn-inner">
-            <div class="btn-circle-icon btn-circle-light">📅</div>
-            <div style="flex-grow: 1;">
-                <div class="btn-title">Book a 30-minute consultation</div>
-                <div class="btn-sub">Pick a slot on our Calendly</div>
-            </div>
-            <span class="btn-arrow">→</span>
-        </div>
-    """,
-    url="https://calendly.com",
-    use_container_width=True,
-)
-
-st.markdown("</div>", unsafe_allow_html=True)
-
-# 4. Hero Ring Image
+# 4. Ring Image Section
 st.markdown(
     """
     <div class="hero-card">
@@ -442,7 +414,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# 5. Guarantee Card
+# 5. Guarantee Section
 st.markdown(
     """
     <div class="text-block-card">
@@ -468,7 +440,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# 6. Features Breakdown
+# 6. Feature Breakdown
 st.markdown(
     """
     <div>
@@ -489,7 +461,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# 7. Editorial Section
+# 7. Editorial Copy
 st.markdown(
     """
     <div class="copy-block">
