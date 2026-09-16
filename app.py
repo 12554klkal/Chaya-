@@ -441,11 +441,11 @@ st.html(
     """
 )
 
-# Render Showcase Ring Image (Clean Solitaire Engagement Ring)
+# Render Showcase Engagement Ring Image
 st.markdown(
     """
     <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=1000&auto=format&fit=crop" alt="Simple Solitaire Diamond Engagement Ring" />
+        <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?q=80&w=1000&auto=format&fit=crop" alt="Diamond Engagement Ring" />
         <div class="badge">
             <span class="badge-dot"></span> Ethically sourced, since 1976
         </div>
