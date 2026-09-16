@@ -230,6 +230,7 @@ st.html(
         overflow: hidden;
         background-color: #E2CDC4;
         margin-bottom: 25px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
 
     .hero-card img {
@@ -239,25 +240,28 @@ st.html(
         object-fit: cover;
     }
 
+    /* Redesigned Badge for High Legibility */
     .badge {
         position: absolute;
-        bottom: 14px;
-        left: 14px;
-        background: rgba(255, 255, 255, 0.92);
+        bottom: 16px;
+        left: 16px;
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(8px);
-        padding: 6px 12px;
+        padding: 8px 14px;
         border-radius: 30px;
-        font-size: 11px;
-        font-weight: 500;
-        color: #333;
+        font-size: 11.5px;
+        font-weight: 600;
+        color: #2B2523;
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+        letter-spacing: 0.01em;
     }
 
     .badge-dot {
-        width: 6px;
-        height: 6px;
+        width: 7px;
+        height: 7px;
         background-color: #B58A7E;
         border-radius: 50%;
     }
@@ -441,20 +445,18 @@ st.html(
     """
 )
 
-# Render Showcase Ring Image
+# Render Showcase Engagement Ring Image
 st.markdown(
     """
     <div class="hero-card">
-        <img src="https://teachjewelry.com/wp-content/uploads/2024/06/a-wedding-engagement-ring.jpg">
+        <img src="https://teachjewelry.com/wp-content/uploads/2024/06/a-wedding-engagement-ring.jpg" alt="Wedding Engagement Ring" />
+        <div class="badge">
             <span class="badge-dot"></span> Ethically sourced, since 1976
         </div>
     </div>
     """,
     unsafe_allow_html=True,
 )
-
-
-
 
 # Stats Counter Section
 st.html(
