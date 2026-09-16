@@ -389,11 +389,11 @@ st.html(
     """
 )
 
-# Render Local Showcase Ring Image
+# Render Local Showcase Ring Image (Updated file name)
 st.markdown(
     """
     <div class="hero-card">
-        <img src="ring.png" alt="Engagement Ring FOR HER" />
+        <img src="ring.png.PNG" alt="Engagement Ring FOR HER" />
         <div class="badge">
             <span class="badge-dot"></span> Ethically sourced, since 1976
         </div>
