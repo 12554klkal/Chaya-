@@ -431,12 +431,12 @@ st.html(
                 <span class="btn-arrow">→</span>
             </a>
 
-            <a href="https://calendly.com" target="_blank" class="custom-btn btn-outline">
+            <a href="https://chaya-jewellery.ch/#formular">
                 <div class="btn-inner">
                     <div class="btn-circle-icon btn-circle-light">📅</div>
                     <div>
                         <div class="btn-title">Book a 30-minute consultation</div>
-                        <div class="btn-sub">Pick a slot on our Calendly</div>
+                        <div class="btn-sub">Write us an email</div>
                     </div>
                 </div>
                 <span class="btn-arrow">→</span>
