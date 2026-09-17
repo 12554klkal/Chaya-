@@ -240,7 +240,6 @@ st.html(
         object-fit: cover;
     }
 
-    /* Redesigned Badge for High Legibility */
     .badge {
         position: absolute;
         bottom: 16px;
@@ -301,7 +300,6 @@ st.html(
         margin-top: 4px;
     }
 
-    /* REFINED LUXURY PILLARS */
     .pillar-stack {
         display: flex;
         flex-direction: column;
@@ -346,7 +344,6 @@ st.html(
         font-weight: 400;
     }
 
-    /* SLEEK EDITORIAL FEATURE BOX */
     .story-card {
         background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(247, 243, 238, 0.4) 100%);
         border: 1px solid rgba(181, 138, 126, 0.25);
@@ -386,7 +383,7 @@ st.html(
     """
 )
 
-# Render Header, Text Highlight, & Interactive CTA Buttons
+# Render Full Layout seamlessly inside one HTML block
 st.html(
     """
     <div class="top-header">CHAYA <span>JEWELLERY</span></div>
@@ -398,7 +395,7 @@ st.html(
             Design the <em>Perfect</em><br>Engagement Ring
         </div>
 
-        <!-- Statement Before CTAs -->
+        <!-- Pre-CTA Guarantee -->
         <div class="pre-cta-banner">
             Get the <strong>best-price certified</strong> diamond engagement ring in Switzerland and a <strong>lifetime warranty</strong> in 40 days or less — or you get your <strong>money back.</strong>
         </div>
@@ -409,7 +406,7 @@ st.html(
             <div class="cta-main-heading">Three ways to reach us</div>
             <div class="cta-subtext">Pick whichever feels right — a quick chat, a browse, or a booked call.</div>
             
-            <a href="https://wa.me/41782313186" target="_blank" class="custom-btn btn-whatsapp">
+            <a href="https://wa.me/41790000000" target="_blank" class="custom-btn btn-whatsapp">
                 <div class="btn-inner">
                     <div class="btn-circle-icon btn-circle-dark">💬</div>
                     <div>
@@ -420,7 +417,7 @@ st.html(
                 <span class="btn-arrow">→</span>
             </a>
 
-            <a href="https://chaya-jewellery.ch/collections/?_stone_type_hierarchical=engagement-ring" target="_blank" class="custom-btn btn-outline">
+            <a href="https://chaya-jewellery.ch/collections/round-u-diamond-ring/" target="_blank" class="custom-btn btn-outline">
                 <div class="btn-inner">
                     <div class="btn-circle-icon btn-circle-light">🌐</div>
                     <div>
@@ -431,7 +428,7 @@ st.html(
                 <span class="btn-arrow">→</span>
             </a>
 
-            <a href="https://chaya-jewellery.ch/#formular">
+            <a href="https://chaya-jewellery.ch/#formular" target="_blank" class="custom-btn btn-outline">
                 <div class="btn-inner">
                     <div class="btn-circle-icon btn-circle-light">📅</div>
                     <div>
@@ -442,25 +439,15 @@ st.html(
                 <span class="btn-arrow">→</span>
             </a>
         </div>
-    """
-)
 
-# Render Showcase Engagement Ring Image
-st.markdown(
-    """
-    <div class="hero-card">
-        <img src="https://teachjewelry.com/wp-content/uploads/2024/06/a-wedding-engagement-ring.jpg" alt="Wedding Engagement Ring" />
-        <div class="badge">
-            <span class="badge-dot"></span> Ethically sourced, since 1976
+        <!-- Showcase Ring Image -->
+        <div class="hero-card">
+            <img src="https://teachjewelry.com/wp-content/uploads/2024/06/a-wedding-engagement-ring.jpg" alt="Wedding Engagement Ring" />
+            <div class="badge">
+                <span class="badge-dot"></span> Ethically sourced, since 1976
+            </div>
         </div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
 
-# Stats Counter Section
-st.html(
-    """
         <!-- Stats Section -->
         <div class="text-block-card">
             <div class="stats-grid">
@@ -491,7 +478,7 @@ st.html(
             </div>
             <div class="pillar-card">
                 <div class="pillar-title">Proposal, planned</div>
-                <div class="pillar-desc">Ring, timeline, and setting sorted together — in 40 days.</div>
+                <div class="pillar-desc">Ring, timeline, and setting sorted together — in 30 days.</div>
             </div>
         </div>
 
